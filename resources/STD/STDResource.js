@@ -9,7 +9,7 @@ class STDResource {
   onFail(e, status = 500) {
     return {
       status,
-      message: e.message,
+      message: e,
       content: {},
     };
   }

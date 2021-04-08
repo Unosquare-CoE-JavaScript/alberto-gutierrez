@@ -35,9 +35,7 @@ const style={{color:"red",...styles}}
 
 Utilidad extra: Permite evitar editar la referencia asi que por medio de `...object` sera una copia de object en lugar de una referencia.
 
-Recuerda: una referencia es solo una variable apuntando al contenido de otra.
-
-Recuerda: investigar uso de \_\_v,
+curioso @hap.joi funciona exactamente igual que la libreria yup. me pregunto si Yup sera compatible con node.
 
 #### Recordatorios para despues:
 
@@ -56,5 +54,6 @@ Recuerda: investigar uso de \_\_v,
 1. Reutilizar mi generador de rutas en caso de que futuros proyectos lo permitan.
 2. El proceso de crear modelos y schemas puede ser simplificado en una clase padre y asignar los valores en una clase hijo.
 3. Cuando termine los cursos probablemente me tome unas horas para refactorizar el codigo en algo menos ofensivo y usarlos como starter.
-4. Services podria autogenerarles por consola... usar inquirer o tags.
+4. Services podria autogenerarles por consola... usar inquirer o tags?
 5. Igualmente se puede realizar un STDService para reducir codigo.
+6. Es posible automatizar la generacion (inicial) de validaciones ya sea por consola o por medio del modelo. asi al menos para uso estandar o generico, siempre tendra al menos una validacion.

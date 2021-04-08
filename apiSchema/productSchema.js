@@ -11,5 +11,10 @@ class ProductSchema {
     limit: Joi.string(),
     search: Joi.string(),
   });
+  put = Joi.object().keys({
+    name: Joi.string(),
+    brand: Joi.string(),
+    price: Joi.number().max(1000000).min(1),
+  });
 }
 module.exports = { ProductSchema };

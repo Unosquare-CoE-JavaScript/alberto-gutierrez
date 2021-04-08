@@ -15,7 +15,7 @@ class ProductController {
 
     res.status(response.status).json(response);
   }
-  async get(req, res, next) {
+  async get(req, res) {
     const service = ProductService;
     let response = {};
     let resource = new STDResource();
@@ -28,7 +28,46 @@ class ProductController {
 
     res.status(response.status).json(response);
   }
-  show() {}
-  delete() {}
+  async show(req, res) {
+    const service = ProductService;
+    let response = {};
+    let resource = new STDResource();
+    try {
+      const product = await service.show(req.params.id);
+      response = resource.onSuccess(product);
+    } catch (e) {
+      response = resource.onFail(e);
+    }
+
+    res.status(response.status).json(response);
+  }
+  async delete() {}
+  async update(req, res) {
+    const service = ProductService;
+    let response = {};
+    let resource = new STDResource();
+    try {
+      const product = await service.update(req.params.id, req.body);
+      response = resource.onSuccess(product);
+    } catch (e) {
+      response = resource.onFail(e);
+    }
+
+    res.status(response.status).json(response);
+  }
+
+  async delete(req, res) {
+    const service = ProductService;
+    let response = {};
+    let resource = new STDResource();
+    try {
+      const product = await service.delete(req.params.id);
+      response = resource.onSuccess(product);
+    } catch (e) {
+      response = resource.onFail(e);
+    }
+
+    res.status(response.status).json(response);
+  }
 }
 module.exports = new ProductController();

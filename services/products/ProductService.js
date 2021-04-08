@@ -1,5 +1,5 @@
 const Product = require("../../db/models/product");
-const { mongoDataFormatter } = require("../../helpers/dbHelpers");
+const { mongoDataFormatter, checkById } = require("../../helpers/dbHelpers");
 class ProductService {
   async create(productData) {
     const product = new Product({ ...productData });
@@ -7,10 +7,26 @@ class ProductService {
     return mongoDataFormatter(result);
   }
   async get({ skip = 0, limit = 10, filters = {} }) {
-    console.log(filters);
     let product = await Product.find(filters)
       .skip(parseInt(skip))
       .limit(parseInt(limit));
+    return mongoDataFormatter(product);
+  }
+  async show(id) {
+    checkById(id);
+    let product = await Product.findById(id);
+    return mongoDataFormatter(product);
+  }
+  async update(id, content) {
+    checkById(id);
+    let product = await Product.findOneAndUpdate({ _id: id }, content, {
+      new: true,
+    });
+    return mongoDataFormatter(product);
+  }
+  async delete(id, content) {
+    checkById(id);
+    let product = await Product.findOneAndDelete(id);
     return mongoDataFormatter(product);
   }
 }

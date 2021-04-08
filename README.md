@@ -1,4 +1,4 @@
-# Notes of JS module
+# Notas para curso de JS
 
 Para este modulo ocuparemos instalar mongoDB 4.4.4 | >
 
@@ -17,7 +17,7 @@ Para este modulo ocuparemos instalar mongoDB 4.4.4 | >
 
 ### Instalacion
 
-Solo ejecuta el comando `yarn install`
+Solo ejecuta el comando `yarn install` o `npm install`
 
 ### Quick start
 
@@ -37,15 +37,24 @@ Utilidad extra: Permite evitar editar la referencia asi que por medio de `...obj
 
 Recuerda: una referencia es solo una variable apuntando al contenido de otra.
 
+Recuerda: investigar uso de \_\_v,
+
+#### Recordatorios para despues:
+
+1. Una referencia es solo una variable apuntando al contenido de otra.
+1. Investigar uso de \_\_v.
+1. Leer doc de mongoose (se ve poderoso).
+
 #### Nitpicks:
 
 1. OK... por que el instructor usa `console.log("varname",varname)`; en lugar de `console.log({varname})`; el resultado seria el mismo!!!!
 1. Puedes autogenerar el package.json sin el prompt con `npm init -y`
+1. No soy fan de utilizar delete para deshacerme de variables, quiza un map seria mas practico?
 
 #### Ideas para despues:
 
-1. Retuilizar mi generador de rutas en caso de que futuros proyectos lo permitan.
+1. Reutilizar mi generador de rutas en caso de que futuros proyectos lo permitan.
 2. El proceso de crear modelos y schemas puede ser simplificado en una clase padre y asignar los valores en una clase hijo.
-3. Cuando termine los cursos probablemente me tome unas horas para refactorizar el codigo en algo menos ofensivo y usarlos como starters.
-4. Services podria simplificarle con creando un generador por consola... usar inquirer o tags.
-5. Igualmente se puede realizar un STDService para evitar reducir codigo.
+3. Cuando termine los cursos probablemente me tome unas horas para refactorizar el codigo en algo menos ofensivo y usarlos como starter.
+4. Services podria autogenerarles por consola... usar inquirer o tags.
+5. Igualmente se puede realizar un STDService para reducir codigo.

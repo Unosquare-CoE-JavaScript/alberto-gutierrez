@@ -20,7 +20,7 @@ class ProductController {
     let response = {};
     let resource = new STDResource();
     try {
-      const product = await service.create(req.body);
+      const product = await service.get(req.query);
       response = resource.onSuccess(product);
     } catch (e) {
       response = resource.onFail(e);

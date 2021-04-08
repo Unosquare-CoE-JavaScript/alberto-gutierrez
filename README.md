@@ -48,6 +48,7 @@ curioso @hap.joi funciona exactamente igual que la libreria yup. me pregunto si 
 1. OK... por que el instructor usa `console.log("varname",varname)`; en lugar de `console.log({varname})`; el resultado seria el mismo!!!!
 1. Puedes autogenerar el package.json sin el prompt con `npm init -y`
 1. No soy fan de utilizar delete para deshacerme de variables, quiza un map seria mas practico?
+1. DONT. REPEAT. YOURSELF!!!!!!!!
 
 #### Ideas para despues:
 
@@ -57,3 +58,4 @@ curioso @hap.joi funciona exactamente igual que la libreria yup. me pregunto si 
 4. Services podria autogenerarles por consola... usar inquirer o tags?
 5. Igualmente se puede realizar un STDService para reducir codigo.
 6. Es posible automatizar la generacion (inicial) de validaciones ya sea por consola o por medio del modelo. asi al menos para uso estandar o generico, siempre tendra al menos una validacion.
+7. Puedo crear en caso de que express no lo tenga pre-hecho crear una funcion apiRoutes, donde pueda pasar el controllador y automaticamente conecte los metodos con las rutas correspondientes o genericas de un api. (get,show,create,edit,delete);

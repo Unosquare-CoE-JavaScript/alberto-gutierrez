@@ -7,13 +7,25 @@ function validateObjectSchema(data, schema) {
     path: values.path,
   }));
 }
-module.exports.validateBody = (schema) => {
-  return (req, res, next) => {
-    const error = validateObjectSchema(req.body, schema);
-    if (error) {
-      const response = new STDResource().onFail(error, 400);
-      return res.status(response.status).send(response);
-    }
-    return next();
-  };
+module.exports = {
+  validateBody: (schema) => {
+    return (req, res, next) => {
+      const error = validateObjectSchema(req.body, schema);
+      if (error) {
+        const response = new STDResource().onFail(error, 400);
+        return res.status(response.status).send(response);
+      }
+      return next();
+    };
+  },
+  validateQueryParams: (schema) => {
+    return (req, res, next) => {
+      const error = validateObjectSchema(req.query, schema);
+      if (error) {
+        const response = new STDResource().onFail(error, 400);
+        return res.status(response.status).send(response);
+      }
+      return next();
+    };
+  },
 };

@@ -1,21 +1,22 @@
 const express = require("express");
 const cors = require("cors");
-const dbConection = require("./db/connection");
+const dbConnection = require("./db/connection");
 const productRoutes = require("./routes/productRoutes");
+const userRoutes = require("./routes/userRoutes");
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-dbConection();
-
-//middlewares
+dbConnection();
+console.clear();
+//middleware
 app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 //groups
 app.use(`/api/v1/products`, productRoutes);
-//app.use(`/api/v1/users`);
+app.use(`/api/v1/users`, userRoutes);
 
 //Error handler
 app.use((err, request, response, next) => {

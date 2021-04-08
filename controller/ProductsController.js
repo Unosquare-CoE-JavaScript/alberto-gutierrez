@@ -10,6 +10,7 @@ class ProductController {
       const product = await service.create(req.body);
       response = resource.onSuccess(product);
     } catch (e) {
+      console.log(e);
       response = resource.onFail(e);
     }
 

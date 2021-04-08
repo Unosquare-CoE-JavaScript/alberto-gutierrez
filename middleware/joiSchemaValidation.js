@@ -12,7 +12,11 @@ module.exports = {
     return (req, res, next) => {
       const error = validateObjectSchema(req.body, schema);
       if (error) {
-        const response = new STDResource().onFail(error, 400);
+        console.log(error);
+        const response = new STDResource().onFail(
+          { message: error[0].error },
+          400,
+        );
         return res.status(response.status).send(response);
       }
       return next();

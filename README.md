@@ -59,3 +59,4 @@ curioso @hap.joi funciona exactamente igual que la libreria yup. me pregunto si 
 5. Igualmente se puede realizar un STDService para reducir codigo.
 6. Es posible automatizar la generacion (inicial) de validaciones ya sea por consola o por medio del modelo. asi al menos para uso estandar o generico, siempre tendra al menos una validacion.
 7. Puedo crear en caso de que express no lo tenga pre-hecho crear una funcion apiRoutes, donde pueda pasar el controllador y automaticamente conecte los metodos con las rutas correspondientes o genericas de un api. (get,show,create,edit,delete);
+8. Crear me propio error, para manejar con mayor facilidad los status de error.

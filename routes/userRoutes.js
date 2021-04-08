@@ -9,7 +9,7 @@ const {
 const router = express.Router();
 const us = new UserSchema();
 router.post("/signup", validateBody(us.create), UserController.create);
-router.get("/", validateQueryParams(us.get), UserController.get);
+router.post("/login", validateBody(us.create), UserController.login);
 router.get("/:id", UserController.show);
 router.put("/:id", UserController.update);
 router.delete("/:id", UserController.delete);

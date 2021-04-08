@@ -1,3 +1,4 @@
+const jwt = require("jsonwebtoken");
 const { constants } = require("../../constants");
 const Product = require("../../db/models/product");
 const User = require("../../db/models/user");
@@ -16,6 +17,18 @@ class UserService {
     });
     const result = await model.save();
     return mongoDataFormatter(result);
+  }
+  async login({ email, password }) {
+    const user = await User.findOne({ email });
+    if (!user) {
+      throw new Error(constants.userMsg.INVALID_USER);
+    }
+    const validUser = await bcrypt.compare(password, user.password);
+    if (!validUser) {
+      throw new Error(constants.userMsg.INVALID_USER);
+    }
+    const token = jwt.sign({ id: user._id }, "secret key", { expiresIn: "1d" });
+    return { token };
   }
   async get({ skip = 0, limit = 10, filters = {} }) {
     let product = await Product.find(filters)

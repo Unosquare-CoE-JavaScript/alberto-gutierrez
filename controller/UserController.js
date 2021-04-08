@@ -15,6 +15,19 @@ class UserController {
 
     res.status(response.status).json(response);
   }
+  async login(req, res) {
+    const service = UserService;
+    let response = {};
+    let resource = new STDResource();
+    try {
+      const user = await service.login(req.body);
+      response = resource.onSuccess(user);
+    } catch (e) {
+      response = resource.onFail(e);
+    }
+
+    res.status(response.status).json(response);
+  }
   async get() {}
   async show() {}
   async update() {}

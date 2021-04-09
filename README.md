@@ -8,6 +8,7 @@
 1. En futuras instalaciones recuerda que el path a colocar en tu package.json es: `"test": "./node_modules/.bin/mocha "`
 1. alternativamente simplemente baja **mocha test explorer**
 1. Al pasar el parametro donde a la funcion del test, ese test se vuelve asincrono.
+1. para probar request en el mundo real probablemente quieras utilizar stub sobre spy....
 
 #### Ideas para despues:
 

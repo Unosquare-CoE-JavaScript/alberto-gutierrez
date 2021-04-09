@@ -9,7 +9,7 @@ chai.use(sinonChai);
 
 let spy;
 const data = { users: ["a1", "a2"] };
-describe("Sinon tests", () => {
+describe("User requests tests", () => {
   beforeEach(() => {
     spy = sinon.spy();
     sinon.stub(request, "get").callsFake((url, callback) => {

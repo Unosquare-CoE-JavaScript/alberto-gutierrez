@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon main.js",
     "start": "node main.js",
-    "test": "./node_modules/.bin/mocha"
+    "test": "nyc ./node_modules/.bin/mocha test/unit"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
   "devDependencies": {
     "chai": "^4.3.4",
     "mocha": "^8.3.2",
+    "nyc": "^15.1.0",
     "request": "^2.88.2",
     "sinon": "^10.0.1",
     "sinon-chai": "^3.6.0"

@@ -17,7 +17,9 @@
 
 ## Builder
 
-Builder en resumen le podrias llamar un simplificador para objetos mas complicados, puedes unificar varios para generar comportamientos mas limpios por ejemplo `(new Client()).worksIn("tal").livesIn("city")`
+Builder en resumen le podrias llamar un simplificador para objetos mas complicados, puedes unificar varios para generar comportamientos mas limpios por ejemplo
+
+`(new Client()).worksIn("tal").livesIn("city")`
 
 ## Factory
 
@@ -81,7 +83,29 @@ clase que funciona como una interfaz que permite modificar el funcionamiento int
 
 ## Chain of the responsability
 
-Es una cadena de componentes que tienen la oportunidad de procesar los comandos asignados, teniendo opcionalmente procesamientos defaults y cada uno de ellos tiene la capacidad de terminar la cadena.
+Es una cadena de componentes que tienen la oportunidad de procesar los comandos asignados, teniendo opcionalmente procesamientos defaults y cada uno de ellos tiene la capacidad de terminar la cadena. _requiere repasar_
+
+## Command pattern
+
+Es un objecto que representa la instruccion de una accion particular, de tal manera que pueda hacer un rollback de sus pasos.
+
+El comando patron es tomar las diferentes operaciones y encapsularlas en diferentes comandos que tienen do y undo cada operacion.
+
+Es posible combinar multiples comandos y deshacerles en conjunto.
+
+**Ejemplo practico**
+
+Esto es funcional sobre todo en registro complejos. digamos el registro de un usuario en la db, al tener la logica de "undo" desde el principio podria ayudar a deshacer registros parciales por poner un ejemplo o en su defecto registros fallidos.
+
+Otro ejemplo es en un editor de texto, quieres llevar un registro de los comandos que ejecuto el cliente (addChar,bold,delete) de tal manera que puedas implementar un historial de acciones y deshacerlas.
+
+#### _Nota_:
+
+require planear con antelacion el flujo de tu clase para poder implementar esto.
+
+## Interpreter
+
+Es un componente que procesa texto estructurado. el cual permite separar por operadores lexicos e interpretar secuencias de esos operadores. _requiere repasar_
 
 #### Notas:
 

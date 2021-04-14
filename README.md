@@ -17,7 +17,7 @@
 
 ## Builder
 
-Builder en resumen le podrias llamar un simplificador para objetos mas complicados, puedes unificar varios para generar comportamientos mas limpios por ejemplo
+Builder en resumen le podrias llamar un simplificador para objetos mas complicados, puedes unificar varios para generar comportamientos mas limpios por ejemplo.
 
 `(new Client()).worksIn("tal").livesIn("city")`
 
@@ -99,13 +99,55 @@ Esto es funcional sobre todo en registro complejos. digamos el registro de un us
 
 Otro ejemplo es en un editor de texto, quieres llevar un registro de los comandos que ejecuto el cliente (addChar,bold,delete) de tal manera que puedas implementar un historial de acciones y deshacerlas.
 
-#### _Nota_:
+## _Notas_:
 
 require planear con antelacion el flujo de tu clase para poder implementar esto.
 
+## Iterator
+
+Un iterator es una clase que facilita el avance transversal de un objeto y sus elementos, asi mismo trae consigo una referencia al elemento actual y cuando no hay mas elementos en la lista.
+
 ## Interpreter
 
+Es un patron de diseno centrado en procesamiento de texto como comandos(?)
+
 Es un componente que procesa texto estructurado. el cual permite separar por operadores lexicos e interpretar secuencias de esos operadores. _requiere repasar_
+
+## Mediator
+
+Es un componente que facilita la comunicacion entre componentes sin que los participantes tengan nexos entre ellos. (no es lo mismo que un adapter?) _requiere repasar_
+
+## Memento
+
+Memento son snapshots del estado actual en un particular momento. _requiere repasar_
+
+## Observer
+
+Basicamente es un manejo de eventos cuando algo en el sistema cambia. un setter o getter podrian aplicar en este patron.
+
+vease los states de react, useEffect o por el contrario el uso de justamente Observers en angular.
+
+## State
+
+El comportamiento de un objeto es definido por el estado en el que se encuentra. (cof cof maquina de estados finitos cof cof);
+_Este sera util_
+
+## Strategic
+
+Se trata de separar las partes entre alto nivel (logica de negocios) y bajo nivel (los algoritmos detras de esa logica).
+
+En sintesis permite definir el comportamiento interno de un sistema durante la ejecucion. _Requiere ejercicio_
+
+## Template Method
+
+Separar algoritmos complejos en sus partes, usando composicion y herencia.
+Nos permite definir el esqueleto del algoritmo con implementaciones concretas que seran definidas en la subclases.
+_Requiere ejercicio_
+
+## Visitor
+
+Permite agregar nuevas operaciones o metodos a un objeto sin cambiar el objeto en si mismo.
+la nueva funcionalidad se queda en el nuevo objeto llamado el visitante.
 
 #### Notas:
 

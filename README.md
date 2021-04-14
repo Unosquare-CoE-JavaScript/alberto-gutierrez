@@ -79,7 +79,12 @@ Permite evitar el consumo excesivo de memoria a costa de performance. _requiere 
 
 ## Proxy
 
-clase que funciona como una interfaz que permite modificar el funcionamiento interno con una interfaz identica. _requiere repasar_
+Clase que funciona como una interfaz que permite modificar el funcionamiento interno con una interfaz identica.
+Permite usar un objeto como un placeholder de otro, asi en en lugar de usar el objeto principal, usamos el proxy. (OCP,SRP)
+
+** Ejemplo practico **
+
+Por ejemplo tienes una clase que se encarga de todas las llamadas a la api de tu plataforma, descubres que si bien todas son iguales, hay varias situaciones donde quieres personalizar un poco el contenido antes de enviar o quiza agregar funcionalidad extra, como un sistema de cache por poner un ejemplo.
 
 ## Chain of the responsability
 
@@ -115,7 +120,10 @@ Es un componente que procesa texto estructurado. el cual permite separar por ope
 
 ## Mediator
 
-Es un componente que facilita la comunicacion entre componentes sin que los participantes tengan nexos entre ellos. (no es lo mismo que un adapter?) _requiere repasar_
+Es un componente que facilita la comunicacion entre componentes sin que los participantes tengan nexos entre ellos.
+Encapsula y controla como un set de objetos interactuan entre ellos.
+
+Por ejemplo un chat room seria el mediador entre usuarios.
 
 ## Memento
 
@@ -135,8 +143,11 @@ _Este sera util_
 ## Strategic
 
 Se trata de separar las partes entre alto nivel (logica de negocios) y bajo nivel (los algoritmos detras de esa logica).
+En sintesis permite definir el comportamiento interno de un sistema durante la ejecucion.
 
-En sintesis permite definir el comportamiento interno de un sistema durante la ejecucion. _Requiere ejercicio_
+Es un patron donde encapsulas una familia de algoritmos relacionados.
+Usable al permitir cambiar estrategias o algoritmos de una manera sencilla.
+(LSP,DIP);
 
 ## Template Method
 

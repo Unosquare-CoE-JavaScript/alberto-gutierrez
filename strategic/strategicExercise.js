@@ -1,40 +1,34 @@
-class Creature {
-  constructor(attack, health) {
-    this.attack = attack;
-    this.health = health;
-    this.alive = this.health > 0;
-    // todo
+class Fedex {
+  calculate(pack) {
+    return 1.4;
+  }
+}
+class UPS {
+  calculate(pack) {
+    return 1.5;
   }
 }
 
-class Game {
-  constructor(damageStrategy) {
-    this.damageStrategy = damageStrategy;
-  }
-
-  springTrapOn(creature) {
-    this.damageStrategy.damage(creature);
-    return creature.alive;
+class USPS {
+  calculate(pack) {
+    return 2.4;
   }
 }
 
-class DamageStrategy {
-  damage(creature) {
-    if (creature.health <= 0) {
-      creature.alive = false;
-    }
+const pack = { somethin: "some" };
+
+// strat pattern
+
+class Shipping {
+  constructor(company) {
+    this.company = new company();
+  }
+  calculate(pack) {
+    return this.company.calculate(pack);
   }
 }
 
-class ConstantDamageStrategy extends DamageStrategy {
-  damage(creature) {
-    // todo
-  }
-}
+const ship = new Shipping(Fedex);
+let total = ship.calculate();
 
-class GrowingDamageStrategy extends DamageStrategy {
-  damage(creature) {
-    // todo
-  }
-}
-GrowingDamageStrategy.impact = {};
+console.log(total);

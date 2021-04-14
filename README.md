@@ -15,9 +15,11 @@
 
 1. Dependency Inversion Principle: se resume en que componentes de alto orden no deberian estar casados con objetos per se si no con abstracciones de los mismos.
 
+# Creacionales
+
 ## Builder
 
-Builder en resumen le podrias llamar un simplificador para objetos mas complicados, puedes unificar varios para generar comportamientos mas limpios por ejemplo.
+Builder en resumen le podrias llamar un simplificador para cuando la creacion de objetos en particular son complicadas, puedes unificar varios para generar comportamientos mas limpios por ejemplo.
 
 `(new Client()).worksIn("tal").livesIn("city")`
 
@@ -41,6 +43,8 @@ Basicamente es el contrario del prototype, pues los valores de comparten entre t
 **Ejemplo practico**:
 
 Supon que tienes un proceso muy pesado, que solo quieres llamar una sola vez a lo largo de la vida del proceso. pues ahi es cuando usas el singleton....
+
+# Estructurales
 
 ## Adapter
 
@@ -67,7 +71,7 @@ La idea es tratar los objetos ya sean individuales o composiciones de objetos co
 
 ## Decorator
 
-En resumen facilita el agregado de funcionalidad sin modificar la clase, sin necesariamente depender de la herencia.
+En resumen facilita el agregado de funcionalidad sin modificar la clase, sin necesariamente depender de la herencia. (OCP)
 
 ## Facade
 
@@ -75,7 +79,7 @@ En resumen te permite construir una interfaz simplificada para tus usuarios que 
 
 ## Flyweight
 
-Permite evitar el consumo excesivo de memoria a costa de performance. _requiere repasar_
+Permite almacenar una gran cantidad de elementos sin de hecho consumir la memoria que eso implicaria, ya sea calculando ciertoas partes y haciendo una conexion relacional.
 
 ## Proxy
 
@@ -85,6 +89,8 @@ Permite usar un objeto como un placeholder de otro, asi en en lugar de usar el o
 ** Ejemplo practico **
 
 Por ejemplo tienes una clase que se encarga de todas las llamadas a la api de tu plataforma, descubres que si bien todas son iguales, hay varias situaciones donde quieres personalizar un poco el contenido antes de enviar o quiza agregar funcionalidad extra, como un sistema de cache por poner un ejemplo.
+
+# Comportamiento
 
 ## Chain of the responsability
 
@@ -116,7 +122,7 @@ Un iterator es una clase que facilita el avance transversal de un objeto y sus e
 
 Es un patron de diseno centrado en procesamiento de texto como comandos(?)
 
-Es un componente que procesa texto estructurado. el cual permite separar por operadores lexicos e interpretar secuencias de esos operadores. _requiere repasar_
+Es un componente que procesa texto estructurado. el cual permite separar por operadores lexicos e interpretar secuencias de esos operadores.
 
 ## Mediator
 

@@ -94,7 +94,9 @@ Por ejemplo tienes una clase que se encarga de todas las llamadas a la api de tu
 
 ## Chain of the responsability
 
-Es una cadena de componentes que tienen la oportunidad de procesar los comandos asignados, teniendo opcionalmente procesamientos defaults y cada uno de ellos tiene la capacidad de terminar la cadena. _requiere repasar_
+Es una cadena de componentes que tienen la oportunidad de procesar los comandos asignados, teniendo opcionalmente procesamientos defaults y cada uno de ellos tiene la capacidad de terminar la cadena.
+
+Veelo como el uso de los promises. puedes encadenar varios promises y cada uno tiene fail o success, y de la misma manera cada uno puede cancelar el proceso.
 
 ## Command pattern
 

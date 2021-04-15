@@ -1,0 +1,34 @@
+{
+  "name": "Coc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon main.js",
+    "start": "node main.js",
+    "test": "nyc ./node_modules/.bin/mocha test/unit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Unosquare-CoE-JavaScript/alberto-gutierrez.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Unosquare-CoE-JavaScript/alberto-gutierrez/issues"
+  },
+  "homepage": "https://github.com/Unosquare-CoE-JavaScript/alberto-gutierrez#readme",
+  "dependencies": {
+    "nodemon": "^2.0.7",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2",
+    "nyc": "^15.1.0",
+    "request": "^2.88.2",
+    "sinon": "^10.0.1",
+    "sinon-chai": "^3.6.0"
+  }
+}

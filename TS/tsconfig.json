@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "esNEXT",
+    "module": "commonjs",
+    "strict": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "outDir": "lib",
+    "declaration": true,
+    "sourceMap": true
+  },
+  "exclude": ["node_modules", ".npm", "src/courses"],
+  "include": ["src"]
+}

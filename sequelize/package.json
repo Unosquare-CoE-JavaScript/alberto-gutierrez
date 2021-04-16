@@ -1,0 +1,34 @@
+{
+  "name": "sequelize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "chai": "^4.3.4",
+    "dotenv": "^8.2.0",
+    "mariadb": "^2.5.3",
+    "mocha": "^8.3.2",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.1",
+    "@types/chai": "^4.2.16",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^14.14.41",
+    "@types/validator": "^13.1.3",
+    "sequelize-cli": "^6.2.0",
+    "typescript": "^4.2.4"
+  },
+  "scripts": {
+    "dev": "tsc && node lib/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "addMigration": "sequelize-cli model:generate",
+    "migrate": "sequelize-cli db:migrate",
+    "unmigrate": "sequelize-cli db:migrate:undo"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

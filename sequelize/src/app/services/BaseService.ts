@@ -7,7 +7,7 @@ export class BaseService {
   model!: BaseModel;
   resource!: Newable<BaseResource>;
   async get() {
-    const collect: Collection<BaseResource> = new Collection(this.resource);
+    const collect = new Collection(this.resource);
     const values = await this.model.db.findAll();
     values.forEach((val) => {
       collect.push(val.get());

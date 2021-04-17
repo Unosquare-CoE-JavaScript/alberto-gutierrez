@@ -28,11 +28,13 @@ bs.load(1).then((nbs) => {
 
 */
 const services = new UserService();
+
 services.get().then((vals) => {
-  vals.map((resource: UserResource) => {
+  vals.forEach((resource: UserResource) => {
     resource.killMe();
   });
 });
+
 /*
 services.create({ userName: "pepe", password: "juan" }).then((user) => {
   console.log(user);

@@ -20,6 +20,9 @@ export class BaseResource {
       throw new Error("I dont know who i am");
     }
     this.model.destroy({ where: { id: this.resource.id } });
+    const dead = this.resource;
+    this.resource = {};
+    return dead;
   }
   bulk(data: { [key: string]: any }) {
     this.resource = data;
@@ -33,8 +36,8 @@ export class BaseResource {
   }
 }
 
-export class Collection<T> extends Array {
-  constructor(public resource: Newable<BaseResource>) {
+export class Collection<T extends Newable<BaseResource>> extends Array {
+  constructor(public resource: T) {
     super();
   }
   push(content: dictionary) {

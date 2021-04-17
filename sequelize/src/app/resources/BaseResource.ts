@@ -8,7 +8,6 @@ export class BaseResource {
     this.resource = user.dataValues;
     return this;
   }
-
   save() {
     const id = this.resource.id;
     return id ? this.update(id, this.resource) : this.create(this.resource);
@@ -24,7 +23,7 @@ export class BaseResource {
   }
   bulk(data: { [key: string]: any }) {
     this.resource = data;
-    return this.resource;
+    return this;
   }
   private update(id: alphanumeric, data: dictionary) {
     this.model.update(data, { where: { id } });
@@ -33,7 +32,8 @@ export class BaseResource {
     return (this.resource = (await this.model.create(data)).dataValues);
   }
 }
-export class Collection extends Array {
+
+export class Collection<T> extends Array {
   constructor(public resource: Newable<BaseResource>) {
     super();
   }

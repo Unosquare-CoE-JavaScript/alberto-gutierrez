@@ -1,12 +1,12 @@
 import { BaseResource } from "./BaseResource";
-import { UserModel } from "./../models/Users";
+import { User } from "./../models/Users";
 const bcrypt = require("bcrypt");
 export class UserResource extends BaseResource {
   protected resource!: iUser;
-  model = UserModel;
+  model = new User().db;
   constructor(public id: number | null = null) {
     super();
-    this.resource.id = id;
+    this.id = id;
   }
   async getFromDB(id: number | null = null) {
     if (id) {
@@ -22,15 +22,16 @@ export class UserResource extends BaseResource {
     const salt = bcrypt.genSaltSync(12);
     this.resource.password = bcrypt.hashSync(value, salt);
   }
+
   get username() {
     return this.resource.userName;
   }
-  bulk(data: iUser) {
-    console.log(data);
+  /*bulk(data: iUser) {
+    this.resource.id = data.id;
     this.username = data.userName;
     this.resource.password = data.password;
-    return this.resource;
-  }
+    return this;
+  }*/
 }
 
 export interface iUser {

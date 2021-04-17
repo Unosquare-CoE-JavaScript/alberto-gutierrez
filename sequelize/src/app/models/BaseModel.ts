@@ -3,9 +3,9 @@ export class BaseModel {
   tableName: string = "";
   attributes = {};
   constructor() {
-    console.log(this);
+    //console.log(this);
   }
-  trigger() {
+  get db() {
     const model = db.define(this.tableName, this.attributes);
     return model;
   }

@@ -29,7 +29,9 @@ bs.load(1).then((nbs) => {
 */
 const services = new UserService();
 services.get().then((vals) => {
-  console.log(vals);
+  vals.map((resource: UserResource) => {
+    resource.killMe();
+  });
 });
 /*
 services.create({ userName: "pepe", password: "juan" }).then((user) => {

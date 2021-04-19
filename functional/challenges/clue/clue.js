@@ -7,7 +7,20 @@ const card = {
   room: getRandomItem(rooms),
 };
 
-console.log(card);
+const { character, weapon, room } = card;
+
+console.log(character, weapon, room);
+
+// this is cheating
+
+const [val, val2] = characters.map((char) => char.person.name);
+console.log(val, val2);
+
+//
+characters.forEach((char) => {
+  console.log(char);
+});
+
 function getRandomItem(arr) {
   const rand = Math.round(Math.random() * (arr.length - 1));
   return arr[rand];

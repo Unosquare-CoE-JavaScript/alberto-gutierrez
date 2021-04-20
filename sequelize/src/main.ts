@@ -3,7 +3,7 @@ import { UserResource } from "./app/resources/UserResource";
 import { UserService } from "./app/services/UserService";
 
 server;
-/*
+
 const ur2 = new UserResource();
 ur2.username = "Marco";
 ur2.password = "123";
@@ -27,6 +27,7 @@ bs.load(1).then((nbs) => {
 });
 
 */
+/*
 const services = new UserService();
 
 services.get().then((vals) => {
@@ -34,7 +35,7 @@ services.get().then((vals) => {
     resource.killMe();
   });
 });
-
+*/
 /*
 services.create({ userName: "pepe", password: "juan" }).then((user) => {
   console.log(user);
